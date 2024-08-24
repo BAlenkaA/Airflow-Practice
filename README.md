@@ -55,8 +55,9 @@
     "host": "http://s3:9000"
  }
 ### Примеры использования  </br>
-Есть postgres_db1 и postgres_db2 с одинаковым названием таблиц('vinoteka'), но разными данными. Необходимо выгрузить, объединить данные из этих таблиц, и положить их в бакет 'postgres-data-csv' MinIo в файл формата csv.
-Pipeline состоит из 3-х задач: extract_data_task, combine_data_task, upload_to_minio_task. Настроен на ежедневный запуск.
+Есть postgres_db1 и postgres_db2 с одинаковым названием таблиц('vinoteka'), но разными данными. </br>
+Необходимо выгрузить, объединить данные из этих таблиц, и положить их в бакет 'postgres-data-csv' MinIo в файл формата csv. </br>
+Pipeline состоит из 3-х задач: extract_data_task, combine_data_task, upload_to_minio_task. Настроен на ежедневный запуск. </br>
 В dags создаем Python Package 'data_collection_processing_and_writing_to_csv', в котором добавляем functions.py:
 ```
 from datetime import datetime
